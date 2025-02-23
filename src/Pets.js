@@ -13,7 +13,7 @@ const Pets = () => {
     }, []);
 
     const fetchPets = () => {
-        axios.get('http://3.145.15.93/api/pets')
+        axios.get('https://3.145.15.93/api/pets')
             .then(response => setPets(response.data))
             .catch(error => console.error("Error fetching pets:", error));
     };
@@ -32,7 +32,7 @@ const Pets = () => {
 
     const addPet = () => {
         console.log("Adding pet:", { nombre, raza, edad });
-        axios.post('http://3.145.15.93/api/pets', { nombre, raza, edad: parseInt(edad) })
+        axios.post('https://3.145.15.93/api/pets', { nombre, raza, edad: parseInt(edad) })
             .then(response => {
                 console.log("Pet added:", response.data);
                 fetchPets();
