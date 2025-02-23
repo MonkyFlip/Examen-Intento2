@@ -40,7 +40,10 @@ const Pets = () => {
                 setRaza("");
                 setEdad("");
             })
-            .catch(error => console.error("Error adding pet:", error));
+            .catch(error => {
+                console.error("Error adding pet:", error);
+                console.error("Error details:", error.response ? error.response.data : error.message);
+            });
     };
 
     const filteredPets = pets.filter(pet =>
